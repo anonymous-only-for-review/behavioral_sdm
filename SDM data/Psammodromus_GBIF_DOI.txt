@@ -1,0 +1,32 @@
+GBIF occurrence download
+========================
+
+Species          : Psammodromus algirus
+GBIF taxonKey    : 2469763
+DOI              : 10.15468/dl.b23yf5
+DOI URL          : https://doi.org/10.15468/dl.b23yf5
+GBIF downloadKey : 0044157-260409193756587
+Submitted at     : 2026-04-22 21:26:58 UTC
+Total records    : 38,279
+
+Filters applied
+---------------
+- hasCoordinate         = TRUE
+- hasGeospatialIssue    = FALSE
+- occurrenceStatus      = PRESENT
+- basisOfRecord         in {HUMAN_OBSERVATION, OBSERVATION,
+                            MACHINE_OBSERVATION, PRESERVED_SPECIMEN,
+                            MATERIAL_SAMPLE}
+- year < 2025 OR (year == 2025 AND month <= 6)
+
+How to reproduce
+----------------
+Run "Supplementary R Codes/19_GBIF_download_submit.R" to submit a fresh
+download (requires GBIF account credentials), then
+"Supplementary R Codes/20_GBIF_download_fetch.R" once GBIF flags the
+download as SUCCEEDED to fetch the .zip and produce the cleaned RData.
+
+The cleaned dataset used in the manuscript is provided as
+"SDM data/Psammodromus_GBIF_cleaned.RData" (post quality control:
+geographic clipping to the Iberian Peninsula, deduplication, removal of
+fossil and unverified records, year >= 1980).
